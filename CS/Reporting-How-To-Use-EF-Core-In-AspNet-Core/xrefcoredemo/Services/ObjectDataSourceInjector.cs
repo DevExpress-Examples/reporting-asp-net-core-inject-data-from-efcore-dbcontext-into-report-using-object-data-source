@@ -17,7 +17,6 @@ namespace xrefcoredemo.Services {
         }
 
         public void Process(XtraReport report) {
-            // TODO: we have to provide this (DevExpress.Reports.AspNetCore.EF assembly or move the UniqueDataSourceEnumerator to the public namespace.
             var dse = new UniqueDataSourceEnumerator();
             foreach(var dataSource in dse.EnumerateDataSources(report, true)) {
                 if(dataSource is ObjectDataSource ods && ods.DataSource is Type dataSourceType) {

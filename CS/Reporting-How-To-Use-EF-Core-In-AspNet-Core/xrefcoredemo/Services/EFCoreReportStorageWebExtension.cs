@@ -1,13 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraReports.Web.Extensions;
 using xrefcoredemo.Data;
 using xrefcoredemo.Models;
-using xrefcoredemo.Reports;
 
 namespace xrefcoredemo.Services {
     public class EFCoreReportStorageWebExtension : ReportStorageWebExtension {
@@ -41,7 +38,7 @@ namespace xrefcoredemo.Services {
         public override Dictionary<string, string> GetUrls() {
             var userIdentity = userService.GetCurrentUserId();
             var reportData = dBContext.Reports.Where(a => a.Student.ID == userIdentity).Select(a => new ReportModel() { Id = a.ID.ToString(), Title = string.IsNullOrEmpty(a.DisplayName) ? "Noname Report" : a.DisplayName });
-            var reports =  reportData.ToList();
+            var reports = reportData.ToList();
             return reports.ToDictionary(x => x.Id.ToString(), y => y.Title);
         }
 
@@ -56,7 +53,7 @@ namespace xrefcoredemo.Services {
         public override string SetNewData(XtraReport report, string defaultUrl) {
             var userIdentity = userService.GetCurrentUserId();
             var user = dBContext.Students.Find(userIdentity);
-            var newReport = new Report() { DisplayName = defaultUrl, ReportLayout = ReportToByteArray(report), Student=user };
+            var newReport = new Report() { DisplayName = defaultUrl, ReportLayout = ReportToByteArray(report), Student = user };
             dBContext.Reports.Add(newReport);
             dBContext.SaveChanges();
             return newReport.ID.ToString();

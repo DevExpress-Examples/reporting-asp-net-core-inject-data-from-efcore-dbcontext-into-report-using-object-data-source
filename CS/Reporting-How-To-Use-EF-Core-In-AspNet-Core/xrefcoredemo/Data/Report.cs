@@ -1,4 +1,3 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,5 +10,4 @@ namespace xrefcoredemo.Data {
         public string DisplayName { get; set; }
         public Student Student { get; set; }
     }
-
 }

@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security;
@@ -12,7 +10,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using xrefcoredemo.Data;
 using xrefcoredemo.Models;
-using xrefcoredemo.Services;
 
 namespace xrefcoredemo.Controllers {
     public class AccountController : Controller {

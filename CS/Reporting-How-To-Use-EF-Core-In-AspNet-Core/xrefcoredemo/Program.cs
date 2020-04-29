@@ -1,19 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using xrefcoredemo.Data;
 
-namespace xrefcoredemo
-{
-    public class Program
-    {
+namespace xrefcoredemo {
+    public class Program {
         public static void Main(string[] args) {
             var host = CreateWebHostBuilder(args).Build();
             InitializeDb(host);

@@ -1,23 +1,18 @@
-using System;
-using System.IO;
 using DevExpress.AspNetCore;
 using DevExpress.AspNetCore.Reporting;
-using DevExpress.DataAccess.Excel;
-using DevExpress.DataAccess.Sql;
+using DevExpress.XtraReports.Web.Extensions;
+using DevExpress.XtraReports.Web.ReportDesigner.Services;
+using DevExpress.XtraReports.Web.WebDocumentViewer;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Logging;
-using DevExpress.XtraReports.Web.Extensions;
-using xrefcoredemo.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using xrefcoredemo.Data;
 using xrefcoredemo.Services;
-using DevExpress.XtraReports.Web.WebDocumentViewer;
-using DevExpress.XtraReports.Web.ReportDesigner.Services;
 
 namespace xrefcoredemo {
     public class Startup {
@@ -72,12 +67,6 @@ namespace xrefcoredemo {
             services.AddTransient<CourseListReportRepository>();
             services.AddTransient<MyEnrollmentsReportRepository>();
             services.AddScoped<PreviewReportCustomizationService, CustomPreviewReportCustomizationService>();
-            //// Alternative way to register the repository
-            //services.AddTransient<MyEnrollmentsReportRepository>(sp => {
-            //    return new MyEnrollmentsReportRepository(
-            //        sp.GetRequiredService<IScopedDbContextProvider<SchoolContext>>(),
-            //        sp.GetRequiredService<IUserService>().GetCurrentUserId());
-            //});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

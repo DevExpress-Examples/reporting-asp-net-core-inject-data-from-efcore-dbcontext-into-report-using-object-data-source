@@ -22,15 +22,6 @@ namespace xrefcoredemo.Services {
             studentId = userService.GetCurrentUserId();
         }
 
-        //// We have a dilemma here.
-        //// This ctor signature better conveys the fact that the repository receives the studentId value.
-        //// The downside of the approach is that the repository registraction code is more complicated and must be changed whenever the signature changes.
-        //// See the Startup.cs / "Alternative way to register the repository"
-        //public MyEnrollmentsReportRepository(IScopedDbContextProvider<SchoolContext> scopedDbContextProvider, int studentId) {
-        //    this.scopedDbContextProvider = scopedDbContextProvider ?? throw new ArgumentNullException(nameof(scopedDbContextProvider));
-        //    this.studentId = studentId;
-        //}
-
         public StudentDetailsModel GetStudentDetails() {
             using(var dbContextScope = scopedDbContextProvider.GetDbContextScope()) {
                 var dbContext = dbContextScope.DbContext;
