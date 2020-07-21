@@ -36,33 +36,20 @@ namespace xrefcoredemo.Data {
                 }
             }
             context.SaveChanges();
-            var courses = new Course[] {
-                new Course { CourseID = 1050, Title = "Chemistry", Credits =  3 },
-                new Course { CourseID = 4022, Title = "Microeconomics", Credits =  3 },
-                new Course { CourseID = 4041, Title = "Macroeconomics", Credits =  3 },
-                new Course { CourseID = 1045, Title = "Calculus", Credits =  4 },
-                new Course { CourseID = 3141, Title = "Trigonometry", Credits =  4 },
-                new Course { CourseID = 2021, Title = "Composition", Credits =  3 },
-                new Course { CourseID = 2042, Title = "Literature", Credits =  4 }
-            };
-            foreach(Course c in courses) {
-                context.Courses.Add(c);
-            }
-            context.SaveChanges();
 
             var enrollments = new Enrollment[] {
-                new Enrollment { Student = students[0], Course = courses[0], Grade = Grade.A },
-                new Enrollment { Student = students[1], Course = courses[2], Grade = Grade.C },
-                new Enrollment { Student = students[3], Course = courses[4], Grade = Grade.B },
-                new Enrollment { Student = students[2], Course = courses[1], Grade = Grade.B },
-                new Enrollment { Student = students[1], Course = courses[4], Grade = Grade.F },
-                new Enrollment { Student = students[5], Course = courses[3], Grade = Grade.F },
-                new Enrollment { Student = students[2], Course = courses[2] },
-                new Enrollment { Student = students[1], Course = courses[1] },
-                new Enrollment { Student = students[2], Course = courses[5], Grade = Grade.F },
-                new Enrollment { Student = students[2], Course = courses[6], Grade = Grade.C },
-                new Enrollment { Student = students[6], Course = courses[2] },
-                new Enrollment { Student = students[0], Course = courses[0], Grade = Grade.A },
+                new Enrollment { Student = students[0], Course = "Chemistry", Grade = Grade.A },
+                new Enrollment { Student = students[1], Course = "Macroeconomics", Grade = Grade.C },
+                new Enrollment { Student = students[3], Course = "Trigonometry", Grade = Grade.B },
+                new Enrollment { Student = students[2], Course = "Microeconomics", Grade = Grade.B },
+                new Enrollment { Student = students[1], Course = "Trigonometry", Grade = Grade.F },
+                new Enrollment { Student = students[5], Course = "Calculus", Grade = Grade.F },
+                new Enrollment { Student = students[2], Course = "Macroeconomics" },
+                new Enrollment { Student = students[1], Course = "Microeconomics" },
+                new Enrollment { Student = students[2], Course = "Composition", Grade = Grade.F },
+                new Enrollment { Student = students[2], Course = "Literature", Grade = Grade.C },
+                new Enrollment { Student = students[6], Course = "Macroeconomics" },
+                new Enrollment { Student = students[0], Course = "Chemistry", Grade = Grade.A },
             };
             foreach(Enrollment e in enrollments) {
                 context.Enrollments.Add(e);

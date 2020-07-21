@@ -8,7 +8,6 @@ namespace xrefcoredemo.Services {
     public class ObjectDataSourceWizardTypeProvider : IObjectDataSourceWizardTypeProvider {
         public IEnumerable<Type> GetAvailableTypes(string context) {
             return new[] {
-                typeof(CourseListReportRepository),
                 typeof(MyEnrollmentsReportRepository)
             };
         }

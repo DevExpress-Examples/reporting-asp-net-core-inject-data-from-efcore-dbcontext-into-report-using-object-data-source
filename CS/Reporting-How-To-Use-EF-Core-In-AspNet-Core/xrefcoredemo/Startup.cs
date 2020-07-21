@@ -64,7 +64,6 @@ namespace xrefcoredemo {
             services.AddScoped<IWebDocumentViewerReportResolver, WebDocumentViewerReportResolver>();
             services.AddScoped<IObjectDataSourceInjector, ObjectDataSourceInjector>();
             services.AddTransient<ReportStorageWebExtension, EFCoreReportStorageWebExtension>();
-            services.AddTransient<CourseListReportRepository>();
             services.AddTransient<MyEnrollmentsReportRepository>();
             services.AddScoped<PreviewReportCustomizationService, CustomPreviewReportCustomizationService>();
         }

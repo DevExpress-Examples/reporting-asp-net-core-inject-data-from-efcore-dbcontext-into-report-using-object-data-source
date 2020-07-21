@@ -11,12 +11,10 @@
     <None Remove="node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Reports\CourseListReport.repx" />
     <None Remove="Reports\MyEnrollmentsReport.repx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Reports\MyEnrollmentsReport.repx" />
-    <EmbeddedResource Include="Reports\CourseListReport.repx" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.435" />
@@ -34,12 +32,6 @@
     </Compile>
     <Compile Update="Reports\MyEnrollmentsReport.Designer.cs">
       <DependentUpon>MyEnrollmentsReport.repx</DependentUpon>
-    </Compile>
-    <Compile Update="Reports\CourseListReport.cs">
-      <DependentUpon>CourseListReport.repx</DependentUpon>
-    </Compile>
-    <Compile Update="Reports\CourseListReport.Designer.cs">
-      <DependentUpon>CourseListReport.repx</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

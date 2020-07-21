@@ -7,7 +7,7 @@ namespace xrefcoredemo.Data {
         public int EnrollmentID { get; set; }
         public Grade? Grade { get; set; }
 
-        public Course Course { get; set; }
+        public string Course { get; set; }
         public Student Student { get; set; }
     }
 }

@@ -1,8 +1,10 @@
 # Reporting with Entity Framework Core and Data Injection in ASP.NET Core Application
 
-This project demonstrates how to create and view reports with data obtained from Dependency Injection container objects using Entity Framework Core for data access. ASP.NET Core application with Entity Framework provides data to a report as DbContext object that operates in the scope of an HTTP request whose lifetime is different from the report's lifetime. A report is created in the HTTP request context and starts a background thread to get data and create a document. A report needs data after the initial HTTP request is completed. This means a report cannot use the default DbContext instance that the Entity Framework creates in the scope of HTTP request.
+This project demonstrates how to use the [ObjectDataSource](https://docs.devexpress.com/CoreLibraries/DevExpress.DataAccess.ObjectBinding.ObjectDataSource) as a report's data source adapter for the Entity Framework DbContext.
 
-This approach has the following requirements:
+ASP.NET Core application with Entity Framework provides data to a report as DbContext object that operates in the scope of an HTTP request whose lifetime is different from the report's lifetime. A report is created in the HTTP request context and starts a background thread to get data and create a document. A report needs data after the initial HTTP request is completed. This means a report cannot use the default DbContext instance that the Entity Framework creates in the scope of HTTP request.
+
+This example demonstrates the approach that addresses the issues described above. The approach has the following requirements:
 
 - The application needs a repository that provides data to a report.
 
@@ -12,15 +14,21 @@ This approach has the following requirements:
 
 - The HTTP request contains information used to filter data. For example, when you use the user ID to restrict access to reports. A repository, instantiated within the HTTP request's scope, stores the user ID so it is available in the filter criteria. 
 
+- The repository reads and saves values available in the HTTP request context. The values are stored for later use, so the repository saves the current user ID instead of the context-dependent IUserService object.
+
+- The repository reads and saves the current user ID in its constructor. The constructor is invoked in the context of the HTTP request and has access to context-dependent data.
+
+
 ## Implementation Details
 
 ### Data Repository
 
-The application uses the following repositories:
-* [MyEnrollmentsReportRepository](xrefcoredemo/Services/MyEnrollmentsReportRepository.cs)
-* [CourseListReportRepository](xrefcoredemo/Services/CourseListReportRepository.cs)
+The application uses the *MyEnrollmentsReportRepository* repository implemented in the following file:
 
-These regular POCO repositories supply source data for the Object Data Source bound to a report.
+* [MyEnrollmentsReportRepository](xrefcoredemo/Services/MyEnrollmentsReportRepository.cs)
+
+
+The *MyEnrollmentsReportRepository* repository is a regular POCO repository that supplies source data for the Object Data Source bound to a report.
 
 The repository gets the [ScopedDbContextProvider](xrefcoredemo/Services/ScopedDbContextProvider.cs) as a dependency that creates a separate scope in the context of the current request. A scope created with the ScopedDbContextProvider can access data from the background thread outside the HTTP request.
 
@@ -45,4 +53,5 @@ The [ObjectDataSourceInjector](xrefcoredemo/Services/ObjectDataSourceInjector.cs
 ### Document Preview in Report Designer
 
 The [CustomPreviewReportCustomizationService](xrefcoredemo/Services/CustomPreviewReportCustomizationService.cs) assigns a data source to a report before the Report Designer generates a document for preview.
- 
+
+

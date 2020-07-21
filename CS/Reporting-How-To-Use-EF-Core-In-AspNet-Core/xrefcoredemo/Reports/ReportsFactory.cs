@@ -7,8 +7,7 @@ namespace xrefcoredemo.Reports {
         public Dictionary<string, Func<XtraReport>> Reports {
             get {
                 return new Dictionary<string, Func<XtraReport>>() {
-                    ["Enrollments"] = () => new MyEnrollmentsReport(),
-                    ["CourseList"] = () => new CourseListReport(),
+                    ["Enrollments"] = () => new MyEnrollmentsReport()
                 };
             }
         }

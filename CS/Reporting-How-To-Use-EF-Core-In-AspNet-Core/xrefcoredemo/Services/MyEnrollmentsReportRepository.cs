@@ -43,12 +43,11 @@ namespace xrefcoredemo.Services {
                 var student = dbContext.Students.Find(studentId);
 
                 dbContext.Entry(student).Collection(x => x.Enrollments).Load();
-                student.Enrollments.ToList().ForEach(x => dbContext.Entry(x).Reference(c => c.Course).Load());
 
                 var enrollmentModels = student.Enrollments.Select(x =>
                     new EnrollmentDetailsModel {
                         EnrollmentID = x.EnrollmentID,
-                        CourseTitle = x.Course.Title,
+                        Course = x.Course,
                         Grade = x.Grade.HasValue ? x.Grade.Value.ToString() : "NO GRADE YET"
                     });
 
