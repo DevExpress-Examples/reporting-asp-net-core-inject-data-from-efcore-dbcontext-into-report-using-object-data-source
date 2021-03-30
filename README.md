@@ -25,12 +25,12 @@ This example demonstrates the approach that addresses the issues described above
 
 The application uses the *MyEnrollmentsReportRepository* repository implemented in the following file:
 
-* [MyEnrollmentsReportRepository](xrefcoredemo/Services/MyEnrollmentsReportRepository.cs)
+* [MyEnrollmentsReportRepository](CS/xrefcoredemo/Services/MyEnrollmentsReportRepository.cs)
 
 
 The *MyEnrollmentsReportRepository* repository is a regular POCO repository that supplies source data for the Object Data Source bound to a report.
 
-The repository gets the [ScopedDbContextProvider](xrefcoredemo/Services/ScopedDbContextProvider.cs) as a dependency that creates a separate scope in the context of the current request. A scope created with the ScopedDbContextProvider can access data from the background thread outside the HTTP request.
+The repository gets the [ScopedDbContextProvider](CS/xrefcoredemo/Services/ScopedDbContextProvider.cs) as a dependency that creates a separate scope in the context of the current request. A scope created with the ScopedDbContextProvider can access data from the background thread outside the HTTP request.
 
 
 ### Object Data Source
@@ -39,7 +39,7 @@ Use the Report Wizard to create the Object Data Source with the "schema only" op
 
 ### Report Resolver
 
-The [Report Resolver](xrefcoredemo/Services/WebDocumentViewerReportResolver.cs) performs the following tasks:
+The [Report Resolver](CS/xrefcoredemo/Services/WebDocumentViewerReportResolver.cs) performs the following tasks:
 
 - instantiate a report
 - process object data sources in a report with a dependency injector object.
@@ -48,10 +48,10 @@ The dependency injector requests a data repository as a service from a service p
 
 ### Object Data Source Injector
 
-The [ObjectDataSourceInjector](xrefcoredemo/Services/ObjectDataSourceInjector.cs) is a dependency injector that assigns a data source to a report.
+The [ObjectDataSourceInjector](CS/xrefcoredemo/Services/ObjectDataSourceInjector.cs) is a dependency injector that assigns a data source to a report.
 
 ### Document Preview in Report Designer
 
-The [CustomPreviewReportCustomizationService](xrefcoredemo/Services/CustomPreviewReportCustomizationService.cs) assigns a data source to a report before the Report Designer generates a document for preview.
+The [CustomPreviewReportCustomizationService](CS/xrefcoredemo/Services/CustomPreviewReportCustomizationService.cs) assigns a data source to a report before the Report Designer generates a document for preview.
 
 
