@@ -36,9 +36,7 @@ namespace xrefcoredemo {
 
             var builder = services
                 .AddMvc()
-                .RemoveDefaultReportingControllers()    // NOTE: make sure the default document viewer controller is not registered
-                .AddNewtonsoftJson()
-                .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+                .AddNewtonsoftJson();
 #if DEBUG
             if(Env.IsDevelopment()) {
                 builder.AddRazorRuntimeCompilation();
