@@ -1,3 +1,8 @@
+<!-- default badges list -->
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/258774657/2022.1)
+[![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T883610)
+[![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
+<!-- default badges end -->
 # Reporting for ASP.NET Core - Inject Data from the Entity Framework Core DbContext into a Report Using the Object Data Source
 
 An ASP.NET Core application with Entity Framework supplies data to a report as a DbContext object. This object operates in the scope of an HTTP request whose lifetime is different from report lifetime. A report is created in the HTTP request context and starts a background thread to get data and create a document. A report needs data after the initial HTTP request is completed. This means a report cannot use the default DbContext instance that the Entity Framework creates in the scope of the HTTP request.
