@@ -3,8 +3,8 @@
     "outputFileName": "wwwroot/css/thirdparty.bundle.css",
     "inputFiles": [
       "node_modules/bootstrap/dist/css/bootstrap.min.css",
-      "node_modules/devextreme/dist/css/dx.common.css",
-      "node_modules/devextreme/dist/css/dx.light.css"
+      "node_modules/devextreme-dist/css/dx.common.css",
+      "node_modules/devextreme-dist/css/dx.light.css"
     ],
     "minify": {
       "enabled": false,
@@ -50,7 +50,7 @@
       "node_modules/globalize/dist/globalize/number.js",
       "node_modules/globalize/dist/globalize/currency.js",
       "node_modules/globalize/dist/globalize/date.js",
-      "node_modules/devextreme/dist/js/dx.all.js",
+      "node_modules/devextreme-dist/js/dx.all.js",
 
       "node_modules/ace-builds/src-min-noconflict/ace.js",
       "node_modules/ace-builds/src-min-noconflict/ext-language_tools.js",

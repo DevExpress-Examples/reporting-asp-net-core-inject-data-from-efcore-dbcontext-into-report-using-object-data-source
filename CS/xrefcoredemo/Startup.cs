@@ -64,6 +64,8 @@ namespace xrefcoredemo {
             services.AddTransient<ReportStorageWebExtension, EFCoreReportStorageWebExtension>();
             services.AddTransient<MyEnrollmentsReportRepository>();
             services.AddScoped<PreviewReportCustomizationService, CustomPreviewReportCustomizationService>();
+
+            DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(MyEnrollmentsReportRepository));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

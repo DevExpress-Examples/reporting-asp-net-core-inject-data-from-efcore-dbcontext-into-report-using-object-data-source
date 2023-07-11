@@ -13,11 +13,11 @@
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.161" />
-    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="22.2.*-*" />
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="23.1.*-*" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="6.0.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.6" Condition="'$(Configuration)' == 'Debug'" />
     <PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
