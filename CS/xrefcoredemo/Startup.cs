@@ -64,6 +64,7 @@ namespace xrefcoredemo {
             services.AddTransient<ReportStorageWebExtension, EFCoreReportStorageWebExtension>();
             services.AddTransient<MyEnrollmentsReportRepository>();
             services.AddScoped<PreviewReportCustomizationService, CustomPreviewReportCustomizationService>();
+            services.AddScoped<WebDocumentViewerOperationLogger, CustomWebDocumentViewerOperationLogger>();
 
             DevExpress.Utils.DeserializationSettings.RegisterTrustedClass(typeof(MyEnrollmentsReportRepository));
         }

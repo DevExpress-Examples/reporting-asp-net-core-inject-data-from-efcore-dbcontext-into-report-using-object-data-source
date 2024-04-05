@@ -49,4 +49,4 @@ The [ObjectDataSourceInjector](CS/xrefcoredemo/Services/ObjectDataSourceInjector
 
 ### Document Preview in Report Designer
 
-The [CustomPreviewReportCustomizationService](CS/xrefcoredemo/Services/CustomPreviewReportCustomizationService.cs) assigns a data source to a report before the Report Designer generates a document for preview.
+The [CustomPreviewReportCustomizationService](CS/xrefcoredemo/Services/CustomPreviewReportCustomizationService.cs) assigns a data source to a report before the Report Designer generates a document for preview. In addition to that, the [CustomWebDocumentViewerOperationLogger](CS/xrefcoredemo/Services/CustomWebDocumentViewerOperationLogger.cs) service implementation is required for applications hosted on multiple web servers (Web Farm).

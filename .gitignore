@@ -9,3 +9,10 @@ package-lock.json
 **/wwwroot/js/designer.part.bundle.js
 **/wwwroot/js/viewer.part.bundle.js
 **/wwwroot/js/thirdparty.bundle.js
+**/wwwroot/css/ace
+*.csproj.user
+
+.vs/
+bin/
+node_modules/
+obj/
