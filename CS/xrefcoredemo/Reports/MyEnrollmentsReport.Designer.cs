@@ -73,7 +73,7 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new DevExpress.Drawing.DXFont("Segoe UI Semibold", 20.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.label1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 76.37501F);
             this.label1.Multiline = true;
             this.label1.Name = "label1";
@@ -334,8 +334,8 @@
             this.odsStudentDetails,
             this.odsEnrollments});
             this.DataSource = this.odsStudentDetails;
-            this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 135, 100);
+            this.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F);
+            this.Margins = new DevExpress.Drawing.DXMargins(100, 100, 135, 100);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.rpShowTimestamp});
             this.RequestParameters = false;
