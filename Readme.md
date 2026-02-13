@@ -53,7 +53,7 @@ The [ObjectDataSourceInjector](CS/xrefcoredemo/Services/ObjectDataSourceInjector
 
 The [CustomPreviewReportCustomizationService](CS/xrefcoredemo/Services/CustomPreviewReportCustomizationService.cs) assigns a data source to a report before the Report Designer generates a document for preview. In addition to that, the [CustomWebDocumentViewerOperationLogger](CS/xrefcoredemo/Services/CustomWebDocumentViewerOperationLogger.cs) service implementation is required for applications hosted on multiple web servers (Web Farm).
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-asp-net-core-inject-data-from-efcore-dbcontext-into-report-using-object-data-source&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-asp-net-core-inject-data-from-efcore-dbcontext-into-report-using-object-data-source&~~~was_helpful=no)
 
